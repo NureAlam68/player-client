@@ -9,6 +9,7 @@ const AddPlayer = () => {
     const name = form.name.value;
     const photo = form.photo.value;
     const player = { name, role, photo};
+    console.log(player)
 
     fetch('http://localhost:5000/players', {
       method: 'POST',
