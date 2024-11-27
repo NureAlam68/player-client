@@ -6,6 +6,19 @@ const PlayerCard = () => {
     const loadedPlayers = useLoaderData()
     const [players, setPlayers] = useState(loadedPlayers);
 
+    const handleDelete = id => {
+        fetch(`http://localhost:5000/players/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.deletedCount > 0) {
+                alert('deleted successfully')
+                const remainingPlayer = players.filter(player => player._id !== id);
+                setPlayers(remainingPlayer);
+            }
+        })
+    }
     
     return (
         <div className="min-h-screen mt-10 lg:mt-[88px] px-[120px]">
@@ -26,7 +39,7 @@ const PlayerCard = () => {
                           <p>Who is your favorite player?</p>
                           <div className="card-actions justify-end">
                             <Link className="badge badge-outline">Update</Link>
-                            <Link className="badge badge-outline">Delete</Link>
+                            <button onClick={() => handleDelete(player._id)} className="badge badge-outline">Delete</button>
                           </div>
                         </div>
                       </div>)
