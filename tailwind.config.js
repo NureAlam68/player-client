@@ -7,7 +7,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        bgOne: "url('./assets/bgImg.jpg')"
+      }
+    },
   },
   plugins: [daisyui],
 }
