@@ -38,7 +38,7 @@ const PlayerCard = () => {
                           </h2>
                           <p>Who is your favorite player?</p>
                           <div className="card-actions justify-end">
-                            <Link className="badge badge-outline">Update</Link>
+                            <Link to={`/update/${player._id}`} className="badge badge-outline">Update</Link>
                             <button onClick={() => handleDelete(player._id)} className="badge badge-outline">Delete</button>
                           </div>
                         </div>
