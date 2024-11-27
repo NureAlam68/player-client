@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -12,7 +13,7 @@ const Banner = () => {
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
               quasi. In deleniti eaque aut repudiandae et a id nisi.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <Link to="/addPlayer"><button className="btn btn-primary">Add Player</button></Link>
           </div>
         </div>
       </div>
